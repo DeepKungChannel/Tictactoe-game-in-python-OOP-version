@@ -21,7 +21,7 @@ class Game:
     def rungame(self):
         nump = int(input("Select 1-9: "))
         checkresult = self.checkempty(nump)
-        if checkresult
+        if checkresult:
             self.place(nump)
 
         else:
@@ -33,7 +33,7 @@ class Game:
                 return True
             else:
                 return False
-        elif nump >= 4 and num <= 6:
+        elif nump >= 4 and nump <= 6:
             if self.board[1][nump-4] == 0:
                 return True
             else:
@@ -45,7 +45,7 @@ class Game:
                 return False
     def place(self,nump):
         if self.turn == self.player1:
-            self.turn = self.player2:
+            self.turn = self.player2
             num = 1
         elif self.turn == self.player2:
             self.turn = self.player1
@@ -58,14 +58,14 @@ class Game:
             self.board[2][nump-7] = num
     def render(self):
         for i in self.board:
-            for j in x:
+            for j in i:
                 if j == 0:
                     p = "#"
                 elif j == 1:
                     p = "x"
                 elif j == 2:
                     p = "o"
-                if y != 0:
+                if j != 0:
                     print("|{}".format(p))
                 else:
                     print(p)
