@@ -35,13 +35,6 @@ class Game:
         checkresult = self.checkempty(nump)
         if checkresult:
             self.place(nump)
-            self.render()
-            if self.turn == self.player1:
-                num = 1
-            elif self.turn == self.player2:
-                num = 2
-            xo = self.xo(num)
-            print("{} Turn! ({})".format(self.turn,xo))
             self.windetect()
             if self.gameOver :
                 self.stop()
@@ -129,7 +122,7 @@ class Game:
         return p
     def stop(self):
         self.render()
-        print("{} win!".format(self.turn))
+        print("Congratulations {} win!".format(self.turn))
 
 
 if __name__ == '__main__':
